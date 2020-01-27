@@ -1,0 +1,25 @@
+.card1 {
+  border-radius: 20px;
+  
+}
+label {
+    padding: 10px;
+    background: blue;
+    display: table;
+    color: #fff;
+    border-radius: 20px;
+     }
+
+input[type="file"] {
+    display: none;
+}
+.mynav1 {
+  background-color: white;
+  border-right: 1px solid rgba(220,220,220,0.7);
+}
+.custom-nav {
+  background-color: white;
+}
+.row2 {
+height: 100px;
+}
