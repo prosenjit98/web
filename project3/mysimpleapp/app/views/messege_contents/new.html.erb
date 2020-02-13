@@ -1,0 +1,25 @@
+<%= link_to("<< Back to Comment", post_messege_contents_path, :class => 'back-link')%>
+
+<div class="subjects new">
+  <h2>Create replay</h2>
+  <%= form_for(@messages) do |f| %>
+  <!-- alternative and discribtive way to write the above code is "form_for(@subject, :url => subjects_path, :method=> 'post' ) do |f| %>-->
+    <table summary="Subject form fields">
+    
+    <tr>
+      <th>User : </th>
+      <td><%= @user1.username %></td>
+    </tr>
+    <tr>
+      <th>post</th>
+      <td><%= f.text_area(:content, :size => 40*10) %></td>
+    </tr>
+  </table>
+
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.hidden_field :user_id, :value =>  @user1.id%>
+  <div class="form-bottons">
+    <%=f.submit("Reply")%>
+  </div>
+  <%end%>
+</div>

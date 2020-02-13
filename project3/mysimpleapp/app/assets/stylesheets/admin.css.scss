@@ -1,0 +1,111 @@
+#footer{
+    clear: both;
+  height: 2.5em;
+  text-align: right;
+  background: rgb(255, 153, 51);
+  color:black;
+  padding-right: 30px;
+  padding-top: 2px;
+}
+
+body{
+  background-color: seashell;
+  text-decoration: none;
+}
+#content{
+  text-decoration: none;
+  height: auto;
+  min-height: 400px;
+  h2{
+    text-align: center;
+    background-color: sienna;
+  }
+}
+.field_with_errors{
+  border:1px solid red;
+}
+#new_user{
+  align-content: center;
+}
+.action new{
+  text-decoration: none;
+}
+
+a:-webkit-any-link{
+  text-decoration: none;
+  color: rgb(114, 7, 7);
+  font-size: 15px;
+  &:hover { text-decoration: underline;
+            color:green;}
+}
+.content_view, .actions {
+  background-color: rgb(161, 161, 243);
+  align-content: center;
+  padding-left: 20px;
+
+}
+.content_view1 {
+  box-shadow: 0 0 3px 6px rgb(68, 68, 71);
+  background-color: rgb(161, 161, 243);
+  align-content: center;
+  padding-left: 20px;
+}
+
+.user_name{
+  font-size: x-large;
+  align-content: center;
+  text-decoration: underline;
+  
+  
+}
+
+.content_view > div {
+  display: inline-block;
+  min-height: 100px;
+  width: 80%;
+  text-align: center;
+}
+
+.link > div {
+  display: inline-block;
+}
+
+.link > div#right {
+  float:right;
+  padding-right: 20px;
+  a {
+    font-size: large;
+  }
+}
+
+.input_fields{
+  color: red;
+}
+.mynav2{
+  background-color: rgb(171, 230, 230);
+}
+.mynav3{
+  justify-content: center;
+}
+
+.listing2{
+  background-color: rgb(224, 157, 157);
+  padding-left: 5px;
+}
+.actions_other{
+  background-color: white;
+}
+
+.mylistitem{
+  padding-right: 5px;
+}
+
+.menu_icon1{
+  border-radius: 50%;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+.identity{
+  color:white;
+}

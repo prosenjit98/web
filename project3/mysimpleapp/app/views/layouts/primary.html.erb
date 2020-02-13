@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple rails application</title>
+
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+  <body>
+    
+        <div id="content">
+          <%= yield %>
+        </div>
+        <div id="footer">
+          <p id="copyright"> &copy;something.com</p>
+        </div>
+      
+
+  </body>
+</html>

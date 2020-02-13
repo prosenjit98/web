@@ -1,0 +1,31 @@
+<div class="subjects index">
+<h2>Post</h2>
+
+<%= link_to("Add new Post", new_messege_content_path , :class => 'action new') %>
+
+<br/>
+
+<table class="listing" summary="Subject list" border="1px" style="border-collapse: collapse;">
+  <tr class="header">
+    <td>#</td>
+    <th><%= @post.user.first_name + ' ' + @post.user.last_name %> says </td></th>
+    <th> <%= @post.post_content %></th>
+    <td></td>
+  </tr>
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= message.id %></td>
+    <td><%= @user.first_name + ' ' + @user.last_name %> says </td>
+    <td class="center"><%= message.content %></td>
+    
+    <td class="actions">
+      <%= link_to("show message and comment", messege_content_path(message), :class => 'action show')%> |
+     | <%= link_to("Edit post", edit_messege_content_path(message), :class => 'action edit')%> |
+      | <%= link_to("Delete post", delete_messege_content_path(message), :class => 'action delete')%>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+</div>
+

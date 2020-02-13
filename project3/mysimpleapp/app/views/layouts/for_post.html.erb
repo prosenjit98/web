@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Post</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm rounded">
+    <a class="navbar-brand" href="#">SQUARE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+      aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active ml-5">
+          <a class="nav-link border-bottom border-primary" href="#">About<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2 rounded-pill d-none d-sm-block" type="text" placeholder="Search">
+      </form>
+
+      <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+     
+      <span class= "identity"><%=@user1.first_name%>  <%if @user1.attachment.attached?%><%=image_tag(@user1.attachment, size: "30", class: "menu_icon1")%><%else%> <img src="https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg" alt="" style=" width:30px; height:30px;" class= "identity menu_icon1"><%  end %></span>
+       </li>
+      <li class="nav-item">
+      <button class="btn btn-warning rounded-pill btn-sm mr-3"><%= link_to("Add new Posts", new_post_path , :class => 'action new') %></button>
+    </li>
+        
+        <li class="nav-item">
+          <button class="btn btn-warning rounded-pill btn-sm "><%= link_to("logout", users_logout_path, :class => 'action delete')%></button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    </header>
+
+
+ <div class="container-fluid bg-light">
+    <div class="row ">
+        <div class="col-sm-2 p-0 mynav2 ">
+            <nav class="navbar navbar-sm navbar-light bg-light p-0 mynav3 ">
+            <a class="navbar-brand  d-block d-sm-none" href="#"></a>
+            <button class="navbar-toggler d-block d-sm-none" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-flex justify-content-start p-2 m-0 mynav2" id="navbarNav">
+                <ul class="navbar-nav mynav2">
+                <li class="nav-item border-top mylistitem">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-home"></i></span> Home
+                    <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item border-top active">
+                    <a class="nav-link " href="#"><span class="input-group-addon"><i class="fa fa-home"></i></span>
+                    Post</a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-file-o"></i></span>
+                    Page</a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-plug"></i></span>
+                    Plugin</a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-home"></i></span> Post</a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link" href="#"><span> <span class="input-group-addon"><i
+                            class="fa fa-user-plus"></i></span> Support center</a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-home"></i></span> Media</a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-home"></i></span>
+                    Apperence</a>
+                </li>
+                <li class="nav-item border-top border-bottom">
+                    <a class="nav-link" href="#"><span class="input-group-addon"><i class="fa fa-inr"></i></span>
+                    Ecommerce</a>
+                </li>
+
+                </ul>
+            </div>
+            </nav>
+        </div>
+    <!--main contain-->
+        <div class="col-sm-10 mt-5">
+        <%= yield %>
+        </div>
+     </div>
+</div>
+          
+      <div class="row" id="footer">
+        <p id="copyright"> &copy;something.com</p>
+      </div>
+  
+    </body>
+  </html>
+  

@@ -1,0 +1,24 @@
+<table summary="Subject form fields">
+<tr>
+  <th>User_id</th>
+  <td><%= f.text_field(:user_id) %></td>
+</tr>
+
+<tr>
+<th>Post title</th>
+<td><%= f.text_field(:post_title) %></td>
+</tr>
+
+<tr>
+<th>Discribtion</th>
+<td><%= f.text_area(:post_content, :size => 50*20) %></td>
+</tr>
+
+<tr>
+  <th>Upload</th>
+  <td><%= f.file_field(:attachment) %></td>
+</tr>
+</table>
+<div class="form-bottons">
+<%=f.submit("Edit Post")%>
+</div>

@@ -1,0 +1,54 @@
+
+<div class="subjects index">
+<h2>Comments</h2>
+
+<br/>
+<br/>
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %>
+</div>
+<% end %>
+
+<%= link_to("back to posts page", posts_path , :class => 'action new') %>
+<br/>
+
+<table class="listing" summary="Subject list" >
+<tr style=" background: blue; ">
+    
+<th>Users</th>
+<th > Description</th>
+
+</tr>
+  <tr class="header">
+    
+    <th> <%= @post.user.first_name + ' ' + @post.user.last_name %>  says: </th>
+    <th style =" border: 1px solid black; width: 400px; background: grey;"> <%= @post.post_content %>
+    <br/> <span style="font-size: 8px;"><%= @post.created_at%></span> </th>
+    <th></th>
+  </tr>
+  <tr class="header">
+    
+    <th></th>
+    <th> </th>
+    <td></td>
+  </tr>
+<% @messages.each do |message| %>
+  <tr>
+  
+    
+    <td><%= message.user.first_name %></td>
+    <td class="center" style =" border: 1px solid black; text-align: center;"> <%= message.content %></td>
+    
+    <td class="actions">
+    <% if message.user_id == session[:user_id] %>
+      <%= link_to("Edit post", edit_messege_content_path(message), :class => 'action edit')%> |
+      | <%= link_to("Delete post", delete_messege_content_path(message), :class => 'action delete')%>
+      <%end%>
+    </td>
+  </tr>
+  <% end %>
+</table>
+ <%= link_to("Add new reply", new_messege_content_path , :class => 'action new') %>
+
+</div>
+

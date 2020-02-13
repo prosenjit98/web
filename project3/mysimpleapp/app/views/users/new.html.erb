@@ -1,0 +1,50 @@
+<% def msg(status) return "#{status}" end %>
+
+<div class="pages new">
+  <h2>Create Users</h2>
+ 
+  <%= link_to(" <-- Back to loging page", users_path, :class => 'back-link')%>
+  <br/>
+  <br/>
+  <div class="p-3">
+     <%= form_for(@user) do |f| %>
+    <table summary="Pages form fields">
+        <tr>
+            <th>First Name</th>
+            <td><%= f.text_field(:first_name)%></td>
+            <td class="input_fields"><%= @user.errors[:first_name].join('. ')%></td>
+            
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td><%= f.text_field(:last_name) %></td>
+            <td class="input_fields"><%= @user.errors[:last_name].join('. ')%></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><%= f.password_field(:password) %></td>
+            <td class="input_fields"><%= @user.errors[:password].join('. ')%></td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td><%= f.text_field(:username) %></td>
+            <td class="input_fields"><%= @user.errors[:username].join('. ')%></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><%= f.text_field(:email) %></td>
+            <td class="input_fields"><%= @user.errors[:email].join('. ')%></td>
+        </tr>
+        <tr>
+            <th>Upload Profile Picture</th>
+            <td><%= f.file_field(:attachment) %></td>
+        </tr>
+
+    </table>
+    <br/>
+    <div class="form-bottons">
+        <%=f.submit("Create User")%>
+    </div>
+    <%end%>
+    </div>
+</div>

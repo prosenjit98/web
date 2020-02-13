@@ -1,0 +1,11 @@
+<%= link_to("<< Back to Post", posts_path, :class => 'back-link')%>
+
+<div class="subjects new">
+  
+  <!-- alternative and discribtive way to write the above code is "form_for(@subject, :url => subjects_path, :method=> 'post' ) do |f| %>-->
+    <h2>Edit post</h2>
+    <%= form_for(@post) do |f| %>
+    <!-- alternative and discribtive way to write the above code is "form_for(@subject, :url => subjects_path, :method=> 'post' ) do |f| %>-->
+      <%= render(:partial => 'form', :locals => {:f => f})%>
+    <%end%>
+  </div>

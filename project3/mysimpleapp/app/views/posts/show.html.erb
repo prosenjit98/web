@@ -1,0 +1,61 @@
+
+<div class="subjects index">
+<h2>Comments</h2>
+
+<br/>
+<br/>
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %>
+</div>
+<% end %>
+
+<%= link_to("back to posts page", posts_path , :class => 'action new') %>
+<br/>
+
+<table class="listing" summary="Subject list" >
+<tr style=" background: blue; ">
+    
+<th>Users</th>
+<th > Description</th>
+
+</tr>
+  <tr class="header">
+    
+    <th class="listing2"> <%= @post.user.first_name + ' ' + @post.user.last_name %>  says: </th>
+    <th style =" border: 1px solid black; width: 400px; background: grey;"> <%= @post.post_content %>
+    <% if @post.attachment.attached? %>
+    <br/><%= image_tag(@post.attachment, style: "width:150px;")%><% end %><br/> <span style="font-size: 8px;"><%= @post.created_at%></span> </th>
+    <th></th>
+  </tr>
+  <tr ><td colspan=2> </td></tr>
+
+<% @messages.each do |message| %>
+  <tr class="listing1"> 
+    <td class="listing2"><%= message.user.first_name %></td>
+    <td class="center" style =" border: 1px solid black; text-align: center;"> <%= message.content %></td>
+    
+    <td class="actions_other">
+    <% if message.user_id == session[:user_id] %>
+      <%= link_to("Edit post", edit_post_messege_content_path(message), :class => 'action edit')%> |
+      | <%= link_to("Delete post", delete_post_messege_content_path(message), :class => 'action delete')%>
+      <%end%>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @post, @post.messege_contents.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :comment %><br>
+    <%= form.text_field :content %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>
+

@@ -1,0 +1,13 @@
+<%= link_to("<< Back to List", messege_contents_path, :class => 'back-link')%>
+<div class="sections delete">
+  <h2>Delete Post</h2>
+  <%= form_for(@messages, :method => 'delete') do |f| %>
+  <!--:method => 'delete' must be added to inform rails that it is delete action not update-->
+
+  <p>Are you sure you want to parmanently delete this post?</p>
+
+  <div class="form-bottons">
+    <%=f.submit("Delete post")%>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+
+<div class="subjects index">
+
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %>
+</div>
+<% end %>
+<br/>
+
+
+
+
+<% @post.each do |post| %>
+  <tr>
+    <div class="contenters">
+    <div class="content_view"><span class="user_name"><%= post.user.first_name + ' ' + post.user.last_name %></span>
+    <div class="content_view"><%= post.post_title %></div></div>
+    
+    <div class="actions">
+      <%= link_to("Details", post_path(post), :class => 'action show')%> |
+      <% if post.user_id == session[:user_id] %>
+     | <%= link_to("Edit post", edit_post_path(post), :class => 'action edit')%> |
+      | <%= link_to("Delete post", delete_post_path(post), :class => 'action delete')%>
+      <%end%>
+    </div>
+ <hr/>
+  <% end %>
+
+
+
+
+</div>
